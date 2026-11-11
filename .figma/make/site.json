@@ -1,0 +1,10 @@
+{
+  "description": "A simple interface featuring a button within a framed layout, providing a clear, focused space for users to interact.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

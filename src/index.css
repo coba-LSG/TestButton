@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Gotham:Book";
+  src: url("/fonts/Gotham-Book.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 325;
+}
+
+@font-face {
+  font-family: "Gotham:Medium";
+  src: url("/fonts/Gotham-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 350;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    background: #ffffff;
+  }
+}
+
+.button-frame {
+  display: grid;
+  min-height: 100dvh;
+  place-items: center;
+  padding: 24px;
+  background: #ffffff;
+}
+
+.primary-button {
+  display: inline-flex;
+  min-width: 128px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 28px;
+  border: 1px solid transparent;
+  border-radius: 32px;
+  background: #ffd700;
+  color: #002e3c;
+  cursor: pointer;
+  font-family: "Gotham:Medium", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 350;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+  white-space: nowrap;
+  transition:
+    background-color 200ms ease-out,
+    color 200ms ease-out,
+    border-width 200ms ease-out,
+    padding 200ms ease-out;
+}
+
+.primary-button__icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+
+.primary-button__icon img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 24px;
+  height: 24px;
+  transition: opacity 200ms ease-out;
+}
+
+.primary-button__icon-hover,
+.primary-button__icon-pressed {
+  opacity: 0;
+}
+
+.primary-button:hover {
+  padding: 16px 28px;
+  border-width: 2px;
+  background: #ffc700;
+  color: #002530;
+}
+
+.primary-button:hover .primary-button__icon-default {
+  opacity: 0;
+}
+
+.primary-button:hover .primary-button__icon-hover {
+  opacity: 1;
+}
+
+.primary-button:active {
+  padding: 12px 24px;
+  border-width: 4px;
+}
+
+.primary-button:active .primary-button__icon-hover {
+  opacity: 0;
+}
+
+.primary-button:active .primary-button__icon-pressed {
+  opacity: 1;
+}
+
+.primary-button:focus-visible {
+  outline: 3px solid #006b80;
+  outline-offset: 4px;
+}
